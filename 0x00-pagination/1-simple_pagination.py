@@ -9,14 +9,6 @@ import math
 from typing import List, Tuple
 
 
-def index_range(page: int, page_size: int) -> Tuple[int, int]:
-    """
-    return a tuple of size two containing a start index and an end index
-    corresponding to the range of indexes to return in a list for those
-    particular pagination parameters.
-    """
-    return ((page - 1) * page_size, page * page_size)
-
 class Server:
     """Server class to paginate a database of popular baby names.
     """
@@ -39,7 +31,7 @@ class Server:
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """
         Finds the correct indexes to paginate dataset correctly and
-        returns the appropriate page of the dataset (i.e. the correct    
+        returns the appropriate page of the dataset (i.e. the correct
         list of rows).
         """
         assert type(page) is int and page > 0
@@ -47,7 +39,7 @@ class Server:
         self.dataset()
         start, end = index_range(page, page_size)
         return self.__dataset[start:end]
-    
+
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """ Finds the correct indexes to paginate dataset correctly and
             returns the appropriate page of the dataset (i.e. the correct
@@ -58,3 +50,12 @@ class Server:
         self.dataset()
         start, end = index_range(page, page_size)
         return self.__dataset[start:end]
+
+
+def index_range(page: int, page_size: int) -> Tuple[int, int]:
+    """
+    return a tuple of size two containing a start index and an end index
+    corresponding to the range of indexes to return in a list for those
+    particular pagination parameters.
+    """
+    return ((page - 1) * page_size, page * page_size)
