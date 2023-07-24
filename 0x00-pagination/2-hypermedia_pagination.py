@@ -7,6 +7,7 @@ Hypermedia pagination
 import csv
 import math
 from typing import List, Tuple, Dict, Any
+index_range = __import__('0-simple_helper_function').index_range
 
 
 class Server:
@@ -70,12 +71,3 @@ class Server:
         data = self.get_page(page, page_size)
         total_pages = math.ceil(len(self.dataset()) / page_size)
         next_page = page
-
-
-def index_range(page: int, page_size: int) -> Tuple[int, int]:
-    """
-    return a tuple of size two containing a start index and an end index
-    corresponding to the range of indexes to return in a list for those
-    particular pagination parameters.
-    """
-    return ((page - 1) * page_size, page * page_size)
