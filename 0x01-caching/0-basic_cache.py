@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-""" Basic dictionary: 
-    Create a class BasicCache that inherits from 
+""" Basic dictionary:
+    Create a class BasicCache that inherits from
     BaseCaching and is a caching system
 """
 
