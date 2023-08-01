@@ -1,1 +1,2 @@
 Flask
+flask_babel==2.0.0
