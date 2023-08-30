@@ -1,10 +1,7 @@
-import {
-  describe, it, before, after, afterEach,
-} from 'mocha';
-import { expect } from 'chai';
-import { createQueue } from 'kue';
-
-import createPushNotificationsJobs from './8-job.js';
+const { describe, it, before, after, afterEach,} = require('mocha');
+const { expect } = require('chai');
+const { createQueue } = require('kue')
+const  createPushNotificationsJobs = require('./8-job.js');
 
 const queue = createQueue();
 
